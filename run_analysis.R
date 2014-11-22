@@ -55,5 +55,5 @@ means <- sapply(FullSample,mean,na.rm=TRUE)
 stds <- sapply(FullSample,mean,na.rm=TRUE)
 datatab <- data.table(FullSample)
 tidy_set<-datatab[,lapply(.SD,mean),by="Activity,Subject"]
-write.table(tidy_set,file="tidy.csv",sep=",",row.names = FALSE)
+write.table(tidy_set,file="tidy.txt",sep=",",row.names = FALSE)
 
