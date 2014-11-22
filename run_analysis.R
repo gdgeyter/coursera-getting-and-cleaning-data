@@ -53,7 +53,7 @@ trainX<-cbind(trainX,trainSub)
 FullSample<-rbind(testX,trainX)
 means <- sapply(FullSample,mean,na.rm=TRUE)
 stds <- sapply(FullSample,mean,na.rm=TRUE)
-DT <- data.table(FullSample)
-tidy<-DT[,lapply(.SD,mean),by="Activity,Subject"]
-write.table(tidy,file="tidy.csv",sep=",",row.names = FALSE)
+datatab <- data.table(FullSample)
+tidy_set<-datatab[,lapply(.SD,mean),by="Activity,Subject"]
+write.table(tidy_set,file="tidy.csv",sep=",",row.names = FALSE)
 
